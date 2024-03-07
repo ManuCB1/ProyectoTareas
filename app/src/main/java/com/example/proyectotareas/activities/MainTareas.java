@@ -38,9 +38,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.TimeZone;
 
-public class MainTareasADMIN extends AppCompatActivity implements TaskCompleted, DeleteTaskCompleted {
+public class MainTareas extends AppCompatActivity implements TaskCompleted, DeleteTaskCompleted {
 
     private TextView textFecha;
     private Button btnCrear;
@@ -59,7 +58,7 @@ public class MainTareasADMIN extends AppCompatActivity implements TaskCompleted,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_tareas_admin);
+        setContentView(R.layout.activity_main_tareas);
 
         recycler = findViewById(R.id.recycler);
         textFecha = findViewById(R.id.textFecha);
@@ -154,7 +153,7 @@ public class MainTareasADMIN extends AppCompatActivity implements TaskCompleted,
                 .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        deleteTarea = new DeleteTarea(MainTareasADMIN.this);
+                        deleteTarea = new DeleteTarea(MainTareas.this);
                         try {
                             String datos = "id_tarea="+ URLEncoder.encode(String.valueOf(tareaSeleccionada.getId()), "UTF-8");
                             deleteTarea.execute(datos);

@@ -24,7 +24,7 @@
             android:name=".activities.MainHistorial"
             android:exported="false" />
         <activity
-            android:name=".activities.MainTareasADMIN"
+            android:name=".activities.MainTareas"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
