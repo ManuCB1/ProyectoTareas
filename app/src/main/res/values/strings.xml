@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ProyectoTareas</string>
+
+    <string name="login">Log In</string>
+    <string name="crearTarea">Nueva Tarea</string>
+    <string name="editarTarea">Editar Tarea</string>
+    <string name="historial">Historial Tarea</string>
+    <string name="tareas">Tareas</string>
+
+    <string name="itemEditar">Editar</string>
+    <string name="itemHistorial">Historial</string>
+    <string name="itemBorrar">Borrar</string>
+</resources>
