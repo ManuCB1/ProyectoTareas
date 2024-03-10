@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements TaskCompleted {
             try {
                 String datos = "email="+ URLEncoder.encode(email, "UTF-8")+
                         "&"+"contrasenia="+ URLEncoder.encode(contrasenia, "UTF-8");
-                logIn = new TareaBBDD(this);
+                logIn = new TareaBBDD(this, this);
                 logIn.execute(enlace, datos);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();

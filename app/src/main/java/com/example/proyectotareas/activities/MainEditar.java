@@ -53,7 +53,7 @@ public class MainEditar extends AppCompatActivity implements TaskCompleted {
     }
 
     private void editarTarea() {
-        editarTarea = new TareaBBDD(this);
+        editarTarea = new TareaBBDD(this, this);
         try {
             String nombreModificado = textNombreEditar.getText().toString();
             String contenidoModificado = textContenidoEditar.getText().toString();

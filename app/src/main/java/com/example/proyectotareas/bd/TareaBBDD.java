@@ -1,5 +1,7 @@
 package com.example.proyectotareas.bd;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 
 import java.io.BufferedOutputStream;
@@ -14,10 +16,20 @@ import java.net.URL;
 public class TareaBBDD extends AsyncTask<String, Object, String> {
     String linea = null;
     private HttpURLConnection clienteHttp = null;
+    private Context context;
     private TaskCompleted listener;
+    private ProgressDialog progressDialog;
 
-    public TareaBBDD(TaskCompleted listener) {
+    public TareaBBDD(Context context, TaskCompleted listener) {
+        this.context = context;
         this.listener = listener;
+    }
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        progressDialog = new ProgressDialog(context);
+        progressDialog.setMessage("Cargando...");
+        progressDialog.show();
     }
 
     @Override
@@ -58,6 +70,7 @@ public class TareaBBDD extends AsyncTask<String, Object, String> {
 
     @Override
     protected void onPostExecute(String s) {
+        progressDialog.dismiss();
         listener.onTaskCompleted(linea);
     }
 }

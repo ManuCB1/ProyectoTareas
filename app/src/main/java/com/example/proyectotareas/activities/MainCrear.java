@@ -49,7 +49,7 @@ public class MainCrear extends AppCompatActivity implements TaskCompleted {
     }
 
     private void crearTarea() {
-        crearTarea = new TareaBBDD(this);
+        crearTarea = new TareaBBDD(this, this);
         String nombre = textNombre.getText().toString();
         String contenido = textContenido.getText().toString();
         String fecha = fechaFormateada;

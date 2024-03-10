@@ -106,7 +106,7 @@ public class MainTareas extends AppCompatActivity implements TaskCompleted, Dele
     private void mostrarTareas(String fecha) {
         try {
             String datos = "fecha="+ URLEncoder.encode(fecha, "UTF-8");
-            getTareas = new TareaBBDD(this);
+            getTareas = new TareaBBDD(this, this);
             getTareas.execute(enlace, datos);
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);

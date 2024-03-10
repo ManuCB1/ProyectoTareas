@@ -50,7 +50,7 @@ public class MainHistorial extends AppCompatActivity implements TaskCompleted {
 
     private void cargarLista() {
         Intent recogerDatos = getIntent();
-        getHistorial = new TareaBBDD(this);
+        getHistorial = new TareaBBDD(this, this);
         int idTarea = recogerDatos.getIntExtra("id_tarea", -1);
         try {
             String datos = "id_tarea="+ URLEncoder.encode(String.valueOf(idTarea), "UTF-8");
